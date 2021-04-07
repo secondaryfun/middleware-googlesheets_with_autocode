@@ -29,6 +29,8 @@ async function getData() {
         worksheets.push({[title]: data})
     }
 
+    
+    
     output('middara.json', worksheets)
 
     function cleanData(rows, headers) {
@@ -46,7 +48,10 @@ async function getData() {
             console.log(`${filename} created.`)
         })
     }
+
+
     return data
 }
 
 const updateData = getData()
+
