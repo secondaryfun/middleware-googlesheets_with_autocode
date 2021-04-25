@@ -20,13 +20,13 @@ async function getData() {
     const data = []
     const worksheetList = doc.sheetsByIndex.map(sheet => sheet.title)
     console.log(worksheetList)
-    const worksheets = []
+    const worksheets = {}
     for (const sheet of doc.sheetsByIndex) {
         const rows = await sheet.getRows()
         const title = sheet.title
         const columns = sheet.headerValues
         const data = cleanData(rows, columns)
-        worksheets.push({[title]: data})
+        worksheets[title]= data
     }
 
     

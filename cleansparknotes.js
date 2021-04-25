@@ -1,7 +1,7 @@
 var fs = require('fs')
 
 const data = require('./middara.json')
-const cleaned = sortSparknotes(data[2].Sparknotes)
+const cleaned = sortSparknotes(data.Sparknotes)
 
 
 writeOut('middara1.json', cleaned)
@@ -35,7 +35,7 @@ function sortSparknotes(sparknotes) {
         if (i.ORDER > 1 && !itemCheck) {
             subChptr.content.push({
                 order: i.ORDER,
-                listItem: `<li>${i.CONTENT}<li>`
+                listItem: `<li>${i.CONTENT}</li>`
             })
         }
     })
